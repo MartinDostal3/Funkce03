@@ -6,6 +6,7 @@ using namespace std;
 
 bool jeSude(int x, int& soulich, double& ap)
 {
+    ap = 0;
     bool cisloJeSude = false;
     int soucetSudych{ 0 }, pocetSudych{ 0 }, soucetLichych{ 0 };
     if (x % 2 == 0)cisloJeSude = true;
@@ -18,7 +19,11 @@ bool jeSude(int x, int& soulich, double& ap)
         }
         else soucetLichych += i;
     }
-    ap = (double)soucetSudych / pocetSudych;
+    if (pocetSudych > 0)
+    {
+        ap = (double)soucetSudych / pocetSudych;
+    }
+   
     soulich = soucetLichych;
     return cisloJeSude;
 }
